@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> 
+  <title>Sky Health Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <img src="logo.png" alt="Sky Logo" class="logo" height="100">
+      <div class="progress">
+  <span id="progressText">4 of 10</span>
+  <div class="progress">
+    <div class="progressTrack">
+      <div class="progressBar" id="progressBar"></div>
+    </div>
+  </div>
+
+</div>
+
+    </div>
+
+    <div class="cardContainer">
+    <div class="card">
+      <div class="cardFront">
+      <h2 id="cardtitle">Learning</h2>
+      <p id="cardQstn">How confident are you that we can release updates smoothly and without major issues?</p>
+      <div class="shapes">
+        <div class="shape circle" data-value="green"></div>
+        <div class="shape triangle" data-value="yellow"></div>
+        <div class="shape square" data-value="red"></div>
+      </div>
+      </div>
+      <div class="cardBack">
+        <h3>Leave a comment</h3>
+        <textarea id="commentbox" cols="70" rows="100" placeholder="Type your feedback here...."></textarea>
+        <button class="submitbtn" onclick="submitComment()"> Submit </button>
+      </div>
+    </div>
+  </div>
+
+    <div class="buttons">
+      <button class="navbtn" onclick="goBack()">BACK</button>
+      <button class="homebtn" onclick="goHome()">Exit to Homepage</button>
+      <button class="navbtn" onclick="goNext()">NEXT</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
