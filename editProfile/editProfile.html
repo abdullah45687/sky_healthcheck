@@ -2,42 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  
-  <!--  title -->
   <title>Sky Healthchecker - Edit Profile</title>
-  
-  <!-- Link to CSS -->
   <link rel="stylesheet" href="css/editProfile.css">
 </head>
 <body>
-  <!-- Main container -->
   <div class="container">
-    <!-- Profile section -->
     <div class="editProfile">
       
       <!-- Logo -->
       <img src="images/logo.png" alt="Sky Healthchecker Logo" class="logo">
-      
+
       <!-- Profile picture -->
       <img src="images/profile.png" alt="Profile" class="profile-image">
 
-      <!-- Display user name -->
-      <h2>[Name]</h2>
+      <!-- Editable fields -->
+      <input type="text" id="name" placeholder="Enter Name">
+      <input type="text" id="position" placeholder="Enter Position">
+      <input type="text" id="teamName" placeholder="Enter Team Name">
+      <input type="email" id="email" placeholder="Enter Email">
+      <input type="password" id="password" placeholder="Enter Password">
 
-      <!-- Display user details -->
-      <p><strong>Position:</strong> [Position]</p>
-      <p><strong>Team Name:</strong> [Team Name]</p>
-      <p><strong>Email:</strong> [Email]</p>
-      <p><strong>Password:</strong> [Password]</p>
-
-      <!-- Edit and back buttons -->
-      <button class="btn">Edit Profile</button>
+      <!-- Buttons -->
+      <button class="btn" id="editBtn">Edit Profile</button>
       <button class="btn secondary" id="back">Back to Homepage</button>
     </div>
   </div>
 
-  <!-- Link to JavaScript -->
   <script src="js/editProfile.js"></script>
 </body>
 </html>
-
