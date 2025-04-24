@@ -10,6 +10,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const questions = [
     {
+  // Hadia New Question 1
+    title: "Value Delivery",
+    question: "How well do you think our team is at delivering value to customers and stakeholders?"
+    },
+  // Hadia New Question 2
+    {
+    title: "Communication",
+    question: "How would you rate the effectiveness of your team's communication?"
+    },
+  // Hadia New Question 3
+    {
+    title: "Release Confidence",
+    question: "How confident are you that we can release updates smoothly and without major issues?"
+    },
+    {
       title: "Learning",
       question: "How confident are you that we can release updates smoothly and without major issues?"},
     {
