@@ -1,0 +1,213 @@
+/* removes default margin and sets basic font and background color */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ECECEC;
+}
+
+/* main layout container using flexbox */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh; /* Full screen height */
+}
+
+/* left and right side panels share these styles */
+.left-panel, .right-panel {
+  width: 50%;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* left panel styling */
+.left-panel {
+  position: relative;
+  background-color: #ECECEC;
+  text-align: center;
+  padding-bottom: 60px; /* space for border image */
+  overflow: hidden;
+}
+
+/* logo */
+.logo {
+  width: 180px;
+  margin-bottom: 10px;
+}
+
+/* login heading */
+.left-panel h2 {
+  color: #000;
+  margin-bottom: 20px;
+}
+
+/* label styles for inputs */
+label {
+  display: block;
+  text-align: left;
+  width: 80%;
+  margin: 10px auto 4px;
+  color: #000;
+  font-weight: 500;
+}
+
+/* input field styling */
+input[type="email"], input[type="password"] {
+  width: 80%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #FFF;
+  color: #000;
+}
+
+/* main button style (log in) */
+.btn {
+  width: 80%;
+  padding: 12px;
+  margin: 8px 0;
+  background-color: #535353;
+  color: #FFF;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* second button (sign up) uses same style */
+.secondary {
+  background-color: #535353;
+}
+
+/* forgot password text style */
+.forgot-password {
+  font-size: 13px;
+  font-style: italic;
+  color: #000;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* forgot password link style */
+.forgot-password-link {
+  text-decoration: none;
+  color: #535353;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* link color changes when hovered */
+.forgot-password-link:hover {
+  color: #434343;
+}
+
+/* right panel style */
+.right-panel {
+  flex: 1;
+  min-width: 350px;
+  background-color: #8F8E8E;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* scrolls if content is too long */
+}
+
+/* disclaimer box style */
+.disclaimer-box {
+  background-color: #D9D9D9;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 80%;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+/* disclaimer heading */
+.disclaimer-box h4 {
+  margin-top: 0;
+  font-weight: bold;
+}
+
+/* wrapper for terms section */
+.terms-wrapper {
+  margin-top: 30px;
+}
+
+/* row layout for checkbox and text */
+.terms-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* custom checkbox box */
+.custom-checkbox {
+  width: 66px;
+  height: 48px;
+  background-color: #ccc;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* makes the checkbox invisible but still clickable */
+.custom-checkbox input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+}
+
+/* hidden checkmark */
+.custom-checkbox .checkmark {
+  display: none;
+  font-size: 24px;
+  color: black;
+}
+
+/* shows checkmark when checkbox is checked */
+.custom-checkbox input[type="checkbox"]:checked ~ .checkmark {
+  display: block;
+}
+
+/* rectangle beside checkbox that holds agreement text */
+.agree-rectangle {
+  width: 393px;
+  height: 64px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #000;
+}
+
+/* extra note below terms */
+.terms-note {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000;
+}
+
+/* bottom border image in the left panel */
+.border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50vw;
+  height: 20vh;
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  pointer-events: none;
+}
