@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>All Results</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="chart.js" defer></script>
+</head>
+
+<body>
+
+  <div class="logo-and-profile-container">
+    <img src="logo2.svg.png" alt="Logo" class="logo">
+    <a href="viewProfile.html"><img src="profile.png" class="profile-btn"></a>
+  </div>
+
+  <div class="chart-container">
+
+    <h1 class="chart-title">ALL RESULTS</h1>
+
+    <select id="session" class="select-option">
+      <option selected disabled>Select Session</option>
+      <option value="1">January Review</option>
+      <option value="3">February Review</option>
+      <option value="4">March Review</option>
+      <option value="5">April Review</option>
+      <option value="6">May Review</option>
+      <option value="7">June Review</option>
+    </select>
+
+  <div class="chart-options">
+    <div class="tableButton"><a href="viewAsTable-all.html">View as Table</a></div>
+    <div class="printButton"><a href="#" onclick="window.print()">Print Results</a></div>
+  </div>
+
+    <canvas id="resultsChart" class="results-chart"></canvas>
+    
+  </div>
+
+  <div class="exit-button-container">
+    <a href="adminHomepage.html" class="exit-button">Exit to Homepage</a>
+  </div>
+
+</body>
+
+</html>
