@@ -1,0 +1,313 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> 
+  <title>Sky Health Checker</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      background-color: #b0b0b0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      padding: 20px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      height: 100px;
+    }
+
+    .progress {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 300px;
+      margin-top: 5px;
+    }
+
+    .progressTrack {
+      flex-grow: 1;
+      height: 40px;
+      background-color: white;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progressBar {
+      height: 100%;
+      width: 10%; 
+      background-color: grey;
+      transition: width 0.4s ease;
+    }
+
+    .cardContainer {
+      perspective: 1000px;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      width: 100%;
+      min-height: 450px;
+      position: relative;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .cardFront, .cardBack {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background-color: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .cardBack {
+      transform: rotateY(180deg);
+    }
+
+    #cardtitle {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    #cardQstn {
+      font-size: 20px;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+
+    .shapes {
+      display: flex;
+      justify-content: center;
+      gap: 90px;
+      margin-bottom: 40px;
+    }
+
+    .shape {
+      width: 120px;
+      height: 120px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .shape:hover {
+      transform: scale(1.1);
+    }
+
+    .circle {
+      background-color: green;
+      border-radius: 50%;
+    }
+
+    .square {
+      background-color: red;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 60px solid transparent;
+      border-right: 60px solid transparent;
+      border-bottom: 120px solid yellow;
+      background: none;
+    }
+
+    .submitbtn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .submitbtn:hover {
+      background-color: grey;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    .navbtn,
+    .homebtn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .navbtn:hover,
+    .homebtn:hover {
+      background-color: grey;
+    }
+  </style>
+</head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script src="{% static 'js/chart.js' %}" defer></script>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="logo.png" alt="Sky Logo" class="logo">
+      <div class="progress">
+        <span id="progressText">1 of 7</span>
+        <div class="progressTrack">
+          <div class="progressBar" id="progressBar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cardContainer">
+      <div class="card">
+        <div class="cardFront">
+          <h2 id="cardtitle">Learning</h2>
+          <p id="cardQstn">How confident are you that we can release updates smoothly and without major issues?</p>
+          <div class="shapes">
+            <div class="shape circle" data-value="green"></div>
+            <div class="shape triangle" data-value="yellow"></div>
+            <div class="shape square" data-value="red"></div>
+          </div>
+        </div>
+        <div class="cardBack">
+          <h3>Leave a comment</h3>
+          <textarea id="commentbox" cols="40" rows="5" placeholder="Type your feedback here..."></textarea>
+          <button class="submitbtn" onclick="submitComment()">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="navbtn" onclick="goBack()">BACK</button>
+      <button class="homebtn" onclick="goHome()">Exit to Homepage</button>
+      <button class="navbtn" onclick="goNext()">NEXT</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const card = document.querySelector(".card");
+      const cardTitle = document.getElementById("cardtitle");
+      const cardQuestion = document.getElementById("cardQstn");
+      const shapes = document.querySelectorAll(".shape");
+      const progressText = document.getElementById("progressText");
+      const progressBar = document.getElementById("progressBar");
+
+      let index = 0;
+      const questions = [
+        { title: "Learning", question: "How confident are you that we can release updates smoothly and without major issues?" },
+        { title: "Fun", question: "How much do you enjoy working with this team?" },
+        { title: "Mission", question: "How connected do you feel to the team's mission and purpose?" },
+        { title: "Pawns or Players", question: "How much influence do you feel you have over team decisions and direction?" },
+        { title: "Suitable Process", question: "How well do our processes support efficient and effective work?" },
+        { title: "Speed", question: "How sustainable and effective is our team's pace of work?" },
+        { title: "Support", question: "How supported do you feel by your teammates and leadership?" }
+      ];
+
+      function updateQuestion() {
+        if (index < questions.length) {
+          cardTitle.textContent = questions[index].title;
+          cardQuestion.textContent = questions[index].question;
+
+          const percent = ((index + 1) / questions.length) * 100;
+          progressText.textContent = `${index + 1} of ${questions.length}`;
+          progressBar.style.width = `${percent}%`;
+        } else {
+          cardTitle.textContent = "Thank you!";
+          cardQuestion.textContent = "Your feedback has been submitted.";
+          document.querySelector(".shapes").style.display = "none";
+          document.querySelector(".buttons").style.display = "none";
+          document.querySelector(".cardBack").style.display = "none";
+          progressText.textContent = "✔️";
+          progressBar.style.width = `100%`;
+        }
+      }
+
+      shapes.forEach(shape => {
+        shape.addEventListener("click", () => {
+          card.classList.add("flipped");
+        });
+      });
+
+      window.submitComment = () => {
+        const comment = document.getElementById("commentbox").value;
+        console.log(`User's comment: ${comment}`);
+        document.getElementById("commentbox").value = "";
+        setTimeout(() => {
+          card.classList.remove("flipped");
+          index++;
+          updateQuestion();
+        }, 500);
+      };
+
+      window.goBack = () => {
+        if (index > 0) {
+          index--;
+          updateQuestion();
+        }
+      };
+
+      window.goNext = () => {
+        if (index < questions.length - 1) {
+          index++;
+          updateQuestion();
+        } else {
+          index = questions.length;
+          updateQuestion();
+        }
+      };
+
+      window.goHome = () => {
+        alert("Going to Homepage");
+      };
+
+      updateQuestion();
+    });
+  </script>
+</body>
+</html>

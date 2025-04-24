@@ -1,0 +1,128 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sky Healthchecker | Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            color: #1a1a1a;
+        }
+
+        .wrapper {
+            border: 5px solid black;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #f8f8f8;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .logo img {
+            height: 70px;
+        }
+
+        .account-link {
+            font-size: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .center-content {
+            text-align: center;
+        }
+
+        .center-content h1 {
+            font-size: 22px;
+            font-weight: normal;
+        }
+
+        .btn {
+            background-color: #444;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            margin: 10px 0;
+            font-size: 14px;
+            width: 200px;
+        }
+
+        .btn:hover {
+            background-color: #222;
+        }
+
+        .link-hover {
+          display: inline-block;
+          margin-top: 10px;
+          color: #444;
+          text-decoration: none;
+          font-size: 13px;
+      }
+      
+      .link-hover:hover {
+          color: blue;
+          text-decoration: underline;
+      }
+
+      .forgot-link {
+        display: block;
+        margin-top: 20px;
+        color: #444;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .forgot-link:hover {
+        color: blue;
+    }
+    
+      
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top-bar">
+            <div class="logo">
+                <img src="{% static 'images/skyimgL.jpg' %}" alt="Sky Logo" />
+
+            </div>
+            <a href="#" class="account-link">View Account Page</a>
+        </div>
+
+        <div class="center-content">
+            <h1>Welcome, [Admin Username / Team Leader]</h1>
+            <a href="{% url 'view_as_table' %}">
+                <button class="btn">View All Results</button>
+              </a><br>
+              
+              <a href="{% url 'individual_results' %}">
+                <button class="btn">View Individual Results</button>
+              </a><br>
+              
+              <a href="{% url 'team_results' %}">
+                <button class="btn">View Results by Team</button>
+              </a><br>
+            <a href="{% url 'forget_password' %}" class="forgot-password-link">Forgot Password?</a>
+
+
+
+        </div>
+
+        <div></div>
+    </div>
+</body>
+</html>

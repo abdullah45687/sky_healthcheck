@@ -1,3 +1,111 @@
-hellow abdullah
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sky Healthchecker - Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+    }
 
-this is the text to test update of html paageS...
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .logo {
+      width: 100px;
+    }
+
+    .account-link {
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: normal;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      margin: 15px;
+      font-size: 16px;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #666;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 24px;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="{% static 'images/logo.svg.png' %}" class="logo" alt="Sky Logo">
+    <a href="{% url 'account_page' %}" class="account-link">View Account Page</a>
+  </div>
+
+  {% if user.is_superuser %}
+  <h2>Welcome, Admin!</h2>
+  <div class="button-container">
+    <form action="{% url 'view_as_table' %}">
+      <button type="submit" class="btn">View All Results</button>
+    </form>
+    <form action="{% url 'individual_results' %}">
+      <button type="submit" class="btn">View Individual Results</button>
+    </form>
+    <form action="{% url 'team_results' %}">
+      <button type="submit" class="btn">View Results by Team</button>
+    </form>
+  </div>
+{% else %}
+  <h2>Welcome, {{ user.username }}</h2>
+  <div class="button-container">
+    <form action="{% url 'voting_page' %}">
+      <button type="submit" class="btn">Voting Page</button>
+    </form>
+    <form action="{% url 'individual_results' %}">
+      <button type="submit" class="btn">View Previous Votes</button>
+    </form>
+  </div>
+{% endif %}
+
+
+  <div class="footer">💖 🌸 🌿</div>
+
+</body>
+</html>
