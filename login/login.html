@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sky Healthchecker - Login</title>
+  <!-- linked to CSS file for login page-->
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body> 
+  <!-- main space for login page layout -->
+  <div class="container">
+
+    <!-- left side of the screen:logo, login form, buttons -->
+    <div class="left-panel">
+      <!-- Sky logo -->
+      <img src="images/logo.png" alt="Sky Healthchecker Logo" class="logo">
+
+      <!-- title -->
+      <h2>Log In</h2>
+      
+      <!-- input fields -->
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter email">
+    
+      <!-- password input -->
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter password">
+    
+      <!-- login button -->
+      <button class="btn" id="LoginBtn">Log in</button>
+
+      <!-- sign up button -->
+      <button class="btn secondary" id="signupBtn">Sign up</button>
+    
+      <!-- forgot password link -->
+      <p class="forgot-password">
+        <a href="#" class="forgot-password-link">Forgot Password?</a>
+      </p>
+
+      <!-- uniform border -->
+      <img src="images/border.png" alt="Sky Healthchecker Border" class="border">
+    </div>
+
+    <!-- right side of screen: disclaimer and terms & conditions checkbox -->
+    <div class="right-panel">
+
+      <!-- disclaimer information box -->
+      <div class="disclaimer-box">
+        <h4>Disclaimer</h4>
+        <p>By using this web application, you acknowledge and agree that:</p>
+        <ul>
+          <li>All entered data is for internal assessment purposes only and is not shared with third parties.</li>
+          <li>The application stores data securely, but we cannot guarantee absolute protection against external threats.</li>
+          <li>Users are responsible for maintaining the confidentiality of their login credentials.</li>
+          <li>This is a prototype, and data may be modified or deleted without notice.</li>
+        </ul>
+      </div>
+
+      <!-- terms and conditions checkbox -->
+      <!-- wrapper fixed position for padding around terms area -->
+      <div class="terms-wrapper">
+        <!-- row lumps checkbox and label together so they are styled together -->
+        <div class="terms-row">
+          <label class="custom-checkbox">
+            <input type="checkbox" id="agree">
+            <span class="checkmark">✓</span>
+          </label>
+
+          <!-- simple text for agreement -->
+          <div class="agree-rectangle">
+            <label for="agree">I agree to the terms and conditions</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Linked to JavaScript file for login -->
+  <script src="js/login.js"></script>
+</body>
+</html>
 
