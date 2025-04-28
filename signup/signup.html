@@ -1,35 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Sky Healthchecker - Sign-up</title>
-  <!-- Link to external CSS for styling -->
   <link rel="stylesheet" href="css/signup.css">
 </head>
+
 <body>
-  <!-- Main signup container -->
   <div class="signup-container">
     <div class="sign-up">
-      <!-- Logo image -->
       <img src="images/logo.png" alt="Sky Healthchecker Logo" class="logo">
       <h2>Create an Account</h2>
 
-      <!-- Name input field -->
-      <label for="name">Name</label>
-      <input type="name" id="name" placeholder="Enter name">
+      <div class="input-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter name">
+      </div>
 
-      <!-- Email input field -->
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Enter email">
-    
-      <!-- Password input field -->
-      <label for="password">Password</label>
-      <input type="password" id="password" placeholder="Enter password">
-    
-      <!-- Sign-up button -->
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter email">
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password">
+      </div>
+
+      <div class="input-group">
+        <label for="team">Select Team</label>
+        <select id="team">
+          <option value="">Select a team</option>
+          <option value="1">Team 1</option>
+          <option value="2">Team 2</option>
+          <option value="3">Team 3</option>
+          <option value="4">Team 4</option>
+          <option value="5">Team 5</option>
+        </select>
+      </div>
+
       <button class="btn">Sign up</button>
-    
-      <!-- Redirect text to login page if user already has an account -->
+
       <p class="login-redirection">
         Already registered?
         <a href="login.html" class="login-link">Log in</a>
@@ -37,10 +49,9 @@
     </div>
   </div>
 
-  <!-- Border image placed outside the container for decorative effect -->
   <img src="images/border.png" alt="Sky Healthchecker Border" class="border">
 
-  <!-- Link to external JavaScript for functionality -->
   <script src="js/signup.js"></script>
 </body>
+
 </html>
