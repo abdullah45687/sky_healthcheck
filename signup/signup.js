@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const nameInput = document.getElementById("name");
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password");
-  const teamSelect = document.getElementById("team"); // NEW
+  const teamSelect = document.getElementById("team"); 
 
   signUpBtn.addEventListener("click", function (e) {
     e.preventDefault();
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
-    const team = teamSelect.value.trim(); // NEW
+    const team = teamSelect.value.trim();
 
     if (!name || !email || !password || !team) {
       alert("Please enter your name, email, password, and select a team.");
