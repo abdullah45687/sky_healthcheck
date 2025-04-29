@@ -72,7 +72,7 @@ const questions = [
     }
   }
 
-  // Shape click moves to next question
+  // Shapes click moves to next question
   shapes.forEach(shape => {
     shape.addEventListener("click", () => {
     card.classList.add("flipped");
