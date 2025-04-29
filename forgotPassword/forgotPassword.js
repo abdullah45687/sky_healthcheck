@@ -37,8 +37,18 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // if everything is fine, show success and go to login page
-        alert("Password changed successfully!");
-        window.location.href = "/accounts/login/"; // This now correctly redirects after success
+        // get user from localStorage
+        const user = JSON.parse(localStorage.getItem("registeredUser"));
+
+        // check if email matches stored user
+        if (user && user.email === email) {
+            user.password = newPassword; // update password
+            localStorage.setItem("registeredUser", JSON.stringify(user));
+
+            alert("Password changed successfully!");
+            window.location.href = "/accounts/login/";
+        } else {
+            alert("Email not found. Please check and try again.");
+        }
     });
 });
