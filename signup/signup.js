@@ -1,3 +1,8 @@
+/* 
+STUDENT ID: W1992959 
+NAME: HADIA JAVED 
+*/
+
 document.addEventListener("DOMContentLoaded", function () {
     const signUpBtn = document.getElementById("signup-btn");
     const nameInput = document.getElementById("signup-name");
