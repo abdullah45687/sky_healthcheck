@@ -1,30 +1,33 @@
-// Load user data on page load
+//STUDENT ID: W1992959 
+//NAME: HADIA JAVED //
+
+// When the page loads, check if user data exists in localStorage
 window.onload = function () {
     const user = JSON.parse(localStorage.getItem('userProfile'));
     if (user) {
-      document.getElementById('name').value = user.name || '';
-      document.getElementById('position').value = user.position || '';
-      document.getElementById('teamName').value = user.teamName || '';
-      document.getElementById('email').value = user.email || '';
-      document.getElementById('password').value = user.password || '';
+        document.getElementById('editProfile-name').value = user.name || '';
+        document.getElementById('editProfile-position').value = user.position || '';
+        document.getElementById('editProfile-teamName').value = user.teamName || '';
+        document.getElementById('editProfile-email').value = user.email || '';
+        document.getElementById('editProfile-password').value = user.password || '';
     }
-  };
-  
-  // Save updated profile
-  document.getElementById('editBtn').addEventListener('click', function () {
-    const name = document.getElementById('name').value;
-    const position = document.getElementById('position').value;
-    const teamName = document.getElementById('teamName').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-  
+};
+
+// Event listener for the 'Edit Profile' button
+document.getElementById('editProfile-editBtn').addEventListener('click', function () {
+    const name = document.getElementById('editProfile-name').value;
+    const position = document.getElementById('editProfile-position').value;
+    const teamName = document.getElementById('editProfile-teamName').value;
+    const email = document.getElementById('editProfile-email').value;
+    const password = document.getElementById('editProfile-password').value;
+
     localStorage.setItem('userProfile', JSON.stringify({ name, position, teamName, email, password }));
-  
+
     alert('Profile updated!');
-  });
-  
-  // Redirect to homepage
-  document.getElementById('back').addEventListener('click', function () {
-    window.location.href = 'userHome.html';
-  });
-  
+    window.location.href = '/accounts/home/';
+});
+
+// Event listener for the 'Back to Homepage' button
+document.getElementById('editProfile-backBtn').addEventListener('click', function () {
+    window.location.href = '/accounts/home/';
+});
