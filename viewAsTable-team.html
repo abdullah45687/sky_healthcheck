@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,8 +13,8 @@
 <body>
 
   <div class="logo-and-profile-container">
-    <img src="logo2.svg.png" alt="Logo" class="logo">
-    <a href="viewProfile.html"><img src="profile.png" class="profile-btn"></a>
+    <img src="{% static 'logo2.svg.png' %}">
+    <a href="viewProfile.html"><img src="{% static 'profile.png' %} " class="profile-btn"></a>
   </div>
 
   <div class="chart-container">
@@ -40,7 +41,7 @@
         </select>
 
       <div class="chart-options">
-        <div class="tableButton"><a href="viewAsGraph-team.html">View as Graph</a></div>
+        <div class="tableButton"><a href="{% url 'view-graph-team' %}">View as Graph</a></div>
         <div class="printButton"><a href="#" onclick="window.print()">Print Results</a></div>
       </div>
 
