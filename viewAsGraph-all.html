@@ -1,19 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <title>All Results</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <script src="{% static 'chart.js' %}" defer></script>
   <script src="chart.js" defer></script>
 </head>
 
 <body>
 
   <div class="logo-and-profile-container">
-    <img src="logo2.svg.png" alt="Logo" class="logo">
-    <a href="viewProfile.html"><img src="profile.png" class="profile-btn"></a>
+    <img src="{% static 'logo2.svg.png' %}">
+    <a href="viewProfile.html"><img src="{% static 'profile.png' %} " class="profile-btn"></a>
   </div>
 
   <div class="chart-container">
@@ -31,7 +32,7 @@
     </select>
 
   <div class="chart-options">
-    <div class="tableButton"><a href="viewAsTable-all.html">View as Table</a></div>
+    <div class="tableButton"><a href="{% url 'view-table-all' %}">View as Table</a></div>
     <div class="printButton"><a href="#" onclick="window.print()">Print Results</a></div>
   </div>
 
