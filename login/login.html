@@ -1,82 +1,87 @@
+<!-- 
+STUDENT ID: W1992959 
+NAME: HADIA JAVED 
+-->
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Sky Healthchecker - Login</title>
-  <!-- linked to CSS file for login page-->
-  <link rel="stylesheet" href="css/login.css">
+    <meta charset="UTF-8">
+    <title>Sky Healthchecker - Login</title>
+    <!-- linking the CSS file for login page -->
+    <link rel="stylesheet" href="{% static 'accounts/login.css' %}">
 </head>
-<body> 
-  <!-- main space for login page layout -->
-  <div class="container">
 
-    <!-- left side of the screen:logo, login form, buttons -->
-    <div class="left-panel">
-      <!-- Sky logo -->
-      <img src="images/logo.png" alt="Sky Healthchecker Logo" class="logo">
+<body>
+    <div class="login-container">
+        <div class="login-left-panel">
+            <!-- logo at the top of the login panel -->
+            <img src="{% static 'accounts/images/logo.png' %}" alt="Sky Healthchecker Logo" class="login-logo">
 
-      <!-- title -->
-      <h2>Log In</h2>
-      
-      <!-- input fields -->
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Enter email">
-    
-      <!-- password input -->
-      <label for="password">Password</label>
-      <input type="password" id="password" placeholder="Enter password">
-    
-      <!-- login button -->
-      <button class="btn" id="LoginBtn">Log in</button>
+            <!-- heading for login -->
+            <h2 class="login-heading">Log In</h2>
 
-      <!-- sign up button -->
-      <button class="btn secondary" id="signupBtn">Sign up</button>
-    
-      <!-- forgot password link -->
-      <p class="forgot-password">
-        <a href="#" class="forgot-password-link">Forgot Password?</a>
-      </p>
+            <!-- label and input field for email -->
+            <label for="email" class="login-label">Email</label>
+            <input type="email" id="email" placeholder="Enter email" class="login-input">
 
-      <!-- uniform border -->
-      <img src="images/border.png" alt="Sky Healthchecker Border" class="border">
-    </div>
+            <!-- label and input field for password -->
+            <label for="password" class="login-label">Password</label>
+            <input type="password" id="password" placeholder="Enter password" class="login-input">
 
-    <!-- right side of screen: disclaimer and terms & conditions checkbox -->
-    <div class="right-panel">
+            <!-- login button -->
+            <button class="login-btn" id="LoginBtn">Log in</button>
 
-      <!-- disclaimer information box -->
-      <div class="disclaimer-box">
-        <h4>Disclaimer</h4>
-        <p>By using this web application, you acknowledge and agree that:</p>
-        <ul>
-          <li>All entered data is for internal assessment purposes only and is not shared with third parties.</li>
-          <li>The application stores data securely, but we cannot guarantee absolute protection against external threats.</li>
-          <li>Users are responsible for maintaining the confidentiality of their login credentials.</li>
-          <li>This is a prototype, and data may be modified or deleted without notice.</li>
-        </ul>
-      </div>
+            <!-- signup button -->
+            <button class="login-btn-secondary" id="signupBtn">Sign up</button>
 
-      <!-- terms and conditions checkbox -->
-      <!-- wrapper fixed position for padding around terms area -->
-      <div class="terms-wrapper">
-        <!-- row lumps checkbox and label together so they are styled together -->
-        <div class="terms-row">
-          <label class="custom-checkbox">
-            <input type="checkbox" id="agree">
-            <span class="checkmark">✓</span>
-          </label>
+            <!-- forgot password link -->
+            <p class="login-forgot-password">
+                <a href="{% url 'forgot_password' %}" class="login-forgot-password-link">Forgot Password?</a>
+            </p>
 
-          <!-- simple text for agreement -->
-          <div class="agree-rectangle">
-            <label for="agree">I agree to the terms and conditions</label>
-          </div>
+            <!-- decorative border image -->
+            <img src="{% static 'accounts/images/border.png' %}" alt="Sky Healthchecker Border" class="login-border">
         </div>
-      </div>
+
+        <div class="login-right-panel">
+            <div class="login-disclaimer-box">
+                <!-- disclaimer heading -->
+                <h4 class="login-disclaimer-heading">Disclaimer</h4>
+
+                <!-- disclaimer text about app usage -->
+                <p>By using this web application, you acknowledge and agree that:</p>
+                <ul>
+                    <li>All entered data is for internal assessment purposes only and is not shared with third parties.
+                    </li>
+                    <li>The application stores data securely, but we cannot guarantee absolute protection against
+                        external threats.</li>
+                    <li>Users are responsible for maintaining the confidentiality of their login credentials.</li>
+                    <li>This is a prototype, and data may be modified or deleted without notice.</li>
+                </ul>
+            </div>
+
+            <div class="login-terms-wrapper">
+                <div class="login-terms-row">
+                    <!-- custom checkbox for agreeing to terms -->
+                    <label class="login-custom-checkbox">
+                        <input type="checkbox" id="agree">
+                        <span class="login-checkmark">✓</span>
+                    </label>
+
+                    <!-- text next to the checkbox -->
+                    <div class="login-agree-rectangle">
+                        <label for="agree">I agree to the terms and conditions</label>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- Linked to JavaScript file for login -->
-  <script src="js/login.js"></script>
+    <!-- linking the JavaScript file for login page logic -->
+    <script src="{% static 'accounts/login.js' %}"></script>
 </body>
-</html>
 
+</html>
