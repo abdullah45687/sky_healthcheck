@@ -1,33 +1,49 @@
+<!-- 
+STUDENT ID: W1992959 
+NAME: HADIA JAVED 
+-->
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Sky Healthchecker - Edit Profile</title>
-  <link rel="stylesheet" href="css/editProfile.css">
+    <meta charset="UTF-8">
+    <title>Sky Healthchecker - Edit Profile</title>
+    <link rel="stylesheet" href="{% static 'accounts/edit_profile.css' %}">
 </head>
+
 <body>
-  <div class="container">
-    <div class="editProfile">
-      
-      <!-- Logo -->
-      <img src="images/logo.png" alt="Sky Healthchecker Logo" class="logo">
 
-      <!-- Profile picture -->
-      <img src="images/profile.png" alt="Profile" class="profile-image">
+    <!-- Logo outside the container -->
+    <img src="{% static 'accounts/images/logo.png' %}" alt="Sky Healthchecker Logo" class="edit-profile-logo">
 
-      <!-- Editable fields -->
-      <input type="text" id="name" placeholder="Enter Name">
-      <input type="text" id="position" placeholder="Enter Position">
-      <input type="text" id="teamName" placeholder="Enter Team Name">
-      <input type="email" id="email" placeholder="Enter Email">
-      <input type="password" id="password" placeholder="Enter Password">
+    <!-- Main form container -->
+    <div class="edit-profile-container">
+        <div class="edit-profile-form">
 
-      <!-- Buttons -->
-      <button class="btn" id="editBtn">Edit Profile</button>
-      <button class="btn secondary" id="back">Back to Homepage</button>
+            <!-- Profile Image inside the form -->
+            <img src="{% static 'accounts/images/profile.png' %}" alt="Profile" class="edit-profile-profile-image">
+
+            <!-- Edit Profile text -->
+            <h2 class="edit-profile-heading">Edit Profile</h2>
+
+            <!-- Inputs -->
+            <input type="text" id="editProfile-name" placeholder="Enter Name">
+            <input type="text" id="editProfile-position" placeholder="Enter Position">
+            <input type="text" id="editProfile-teamName" placeholder="Enter Team Name">
+            <input type="email" id="editProfile-email" placeholder="Enter Email">
+            <input type="password" id="editProfile-password" placeholder="Enter Password">
+
+            <!-- Buttons -->
+            <button class="edit-profile-btn" id="editProfile-editBtn">Edit Profile</button>
+            <button class="edit-profile-btn edit-profile-secondary" id="editProfile-backBtn">Back to Homepage</button>
+
+        </div>
     </div>
-  </div>
 
-  <script src="js/editProfile.js"></script>
+    <!-- Link JS -->
+    <script src="{% static 'accounts/edit_profile.js' %}"></script>
 </body>
+
 </html>
