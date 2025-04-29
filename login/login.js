@@ -1,45 +1,52 @@
-// Wait until the entire page content (HTML) is loaded before running this script
+/* 
+STUDENT ID: W1992959 
+NAME: HADIA JAVED 
+*/
+
 document.addEventListener("DOMContentLoaded", function () {
+    // get the login button
+    const loginBtn = document.getElementById("LoginBtn");
 
-  // pointing out login and signup buttons by class names
-  const loginBtn = document.querySelector(".btn");
-  const signupBtn = document.querySelector(".btn.secondary");
+    // get the signup button
+    const signupBtn = document.getElementById("signupBtn");
 
-  // pointing out email and password input fields by IDs
-  const emailInput = document.getElementById("email");
-  const passwordInput = document.getElementById("password");
+    // get the email input field
+    const emailInput = document.getElementById("email");
 
-  // selects the terms and conditions checkbox by its ID
-  const agreeCheckbox = document.getElementById("agree");
+    // get the password input field
+    const passwordInput = document.getElementById("password");
 
-  // adding click event listener to the login button so that it redirects user
-  loginBtn.addEventListener("click", function (e) {
-    // prevent the default submission so that all checks can be completed
-    e.preventDefault();
+    // get the agree to terms checkbox
+    const agreeCheckbox = document.getElementById("agree");
 
-    // retrieves what the user typed in and remove any spaces at the beginning or end
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
-    const agreed = agreeCheckbox.checked;
+    // when user clicks the login button
+    loginBtn.addEventListener("click", function (e) {
+        e.preventDefault(); // stop the form from submitting
 
-    // if email or password is empty, shows an alert and stop
-    if (!email || !password) {
-      alert("Please enter both email and password.");
-      return;
-    }
+        // get the input values
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
+        const agreed = agreeCheckbox.checked;
 
-    // if terms checkbox is not checked, shows an alert and stop
-    if (!agreed) {
-      alert("You must agree to the terms and conditions to continue.");
-      return;
-    }
+        // check if email and password are entered
+        if (!email || !password) {
+            alert("Please enter both email and password.");
+            return;
+        }
 
-    // when all validations checked, redirects the user to the home page
-    window.location.href = "userHome.html";
-  });
+        // check if user agreed to terms
+        if (!agreed) {
+            alert("You must agree to the terms and conditions to continue.");
+            return;
+        }
 
-  // click event listener for the signup button to redirect to the sign up page
-  signupBtn.addEventListener("click", function () {
-    window.location.href = "signup.html";
-  });
+        // if everything is fine, go to home page
+        window.location.href = "/accounts/home/";
+    });
+
+    // when user clicks the signup button
+    signupBtn.addEventListener("click", function (e) {
+        e.preventDefault(); // stop the form from submitting
+        window.location.href = "/accounts/signup/";
+    });
 });
