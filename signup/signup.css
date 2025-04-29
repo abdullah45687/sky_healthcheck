@@ -1,114 +1,113 @@
+/* 
+STUDENT ID: W1992959 
+NAME: HADIA JAVED 
+*/
+
+html,
 body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #f1f1f1;
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
+    /* basic setup for page */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Main signup container */
+/* container for signup content */
 .signup-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 30px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 30px;
 }
 
-/* Inner form box */
-.sign-up {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: transparent;
+/* box that holds signup form */
+.signup-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
 }
 
-/* Logo */
-.logo {
-  max-width: 180px;
-  margin-bottom: 20px;
+/* logo style */
+.signup-logo {
+    max-width: 180px;
+    margin-bottom: 20px;
 }
 
-/* Heading */
-h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
+/* heading style */
+.signup-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-/* Group inputs and labels */
-.input-group {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  /* Keep inputs and labels same width */
-  margin-bottom: 15px;
+/* group for each input and label */
+.signup-input-group {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 15px;
 }
 
-/* Labels */
-label {
-  font-size: 14px;
-  color: #333;
-  margin-bottom: 5px;
+/* label inside input group */
+.signup-input-group label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
 }
 
-/* Inputs */
-input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+/* input fields and select dropdown */
+.signup-input-group input,
+.signup-input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
-/* Select dropdown */
-select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+/* signup button style */
+.signup-btn {
+    width: 300px;
+    padding: 10px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-/* Button */
-.btn {
-  width: 300px;
-  padding: 10px;
-  background-color: #555;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
+/* hover effect on signup button */
+.signup-btn:hover {
+    background-color: #333;
 }
 
-/* Button hover */
-.btn:hover {
-  background-color: #333;
+/* text below the button */
+.signup-login-redirect {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
 }
 
-/* Login redirect */
-.login-redirection {
-  margin-top: 15px;
-  font-size: 14px;
-  color: #333;
+/* link to go to login page */
+.signup-login-link {
+    color: blue;
+    text-decoration: none;
 }
 
-/* Login link */
-.login-link {
-  color: blue;
-  text-decoration: none;
+/* hover effect on login link */
+.signup-login-link:hover {
+    text-decoration: underline;
 }
 
-.login-link:hover {
-  text-decoration: underline;
-}
-
-/* Border image */
-.border {
-  width: 100%;
-  max-height: 100px;
-  object-fit: contain;
+/* bottom border image */
+.signup-border {
+    width: 100%;
+    max-height: 100px;
+    object-fit: contain;
 }
