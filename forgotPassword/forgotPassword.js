@@ -1,29 +1,44 @@
+/* 
+STUDENT ID: W1992959 
+NAME: HADIA JAVED 
+*/
+
 document.addEventListener("DOMContentLoaded", function () {
-    const confirmBtn = document.querySelector(".btn");
-    const emailInput = document.getElementById("email");
-    const newPasswordInput = document.getElementById("new-password");
-    const reenterPasswordInput = document.getElementById("reenter-password");
-  
+    // get the confirm button
+    const confirmBtn = document.getElementById("forgot-password-confirm-btn");
+
+    // get the email input field
+    const emailInput = document.getElementById("forgot-password-email");
+
+    // get the new password input field
+    const newPasswordInput = document.getElementById("forgot-password-new-password");
+
+    // get the re-enter password input field
+    const reenterPasswordInput = document.getElementById("forgot-password-reenter-password");
+
+    // when user clicks the confirm button
     confirmBtn.addEventListener("click", function (e) {
-      e.preventDefault(); // Prevent form submission
-  
-      const email = emailInput.value.trim();
-      const newPassword = newPasswordInput.value.trim();
-      const reenterPassword = reenterPasswordInput.value.trim();
-  
-      // Check if all fields are filled
-      if (!email || !newPassword || !reenterPassword) {
-        alert("Please fill in all fields.");
-        return;
-      }
-  
-      // Check if the new password and re-entered password match
-      if (newPassword !== reenterPassword) {
-        alert("Passwords do not match. Please re-enter your password.");
-        return;
-      }  
-      // If everything is valid, redirect to the login page
-      window.location.href = "login.html";
+        e.preventDefault(); // stop the form from submitting
+
+        // get input values
+        const email = emailInput.value.trim();
+        const newPassword = newPasswordInput.value.trim();
+        const reenterPassword = reenterPasswordInput.value.trim();
+
+        // check if any field is empty
+        if (!email || !newPassword || !reenterPassword) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        // check if passwords match
+        if (newPassword !== reenterPassword) {
+            alert("Passwords do not match. Please re-enter your password.");
+            return;
+        }
+
+        // if everything is fine, show success and go to login page
+        alert("Password changed successfully!");
+        window.location.href = "/accounts/login/"; // This now correctly redirects after success
     });
-  });
-  
+});
