@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Makes body fill the entire screen */
+body, html {
+  height: 100%;
+  width: 100%;
+  background-color: #b0b0b0;
+  font-family: Arial, sans-serif;
+}
+
+/* This code is for the styling of the progress bar  */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 5px;
+}
+
+.progressTrack {
+  flex-grow: 1;
+  height: 40px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  width: 10%; 
+  background-color: grey;
+  transition: width 0.4s ease;
+}
+
+/* This makes the container fill the whole screen */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
+}
+.cardContainer {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* This code is the styling of the card */
+.card {
+  width: 150%;
+  min-height: 450px;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* This code is to flip the card*/
+.card.flipped{
+  transform: rotateY(180deg);
+}
+.cardBack {
+  transform: rotateY(180deg);
+}
+.submitbtn {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.submitbtn:hover {
+  background-color: grey;
+}
+
+/* Styling of the front and back side of the card*/
+.cardFront, .cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Styling for the title of question */
+#cardtitle {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* Styling for question */
+#cardQstn {
+  font-size: 20px;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+/* hovering over the shapes  */
+.shape:hover {
+  transform: scale(1.1);
+}
+
+/* Shape buttons */
+.shapes {
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+  margin-bottom: 40px;
+}
+
+.shape {
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+/* Circle shape */
+.circle {
+  background-color: green;
+  border-radius: 50%;
+}
+
+/* Square shape */
+.square {
+  background-color: red;
+}
+
+/* Triangle shape */
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 120px solid yellow;
+  background: none;
+}
+
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+/* Back, Home and next buttons */
+.navbtn,
+.homebtn {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* hovering over the buttons*/
+.navbtn:hover,
+.homebtn:hover {
+  background-color: grey;
+}

@@ -1,0 +1,57 @@
+<!-- Created by Rahma -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> 
+  <title>Sky Health Checker</title>
+  <link rel="stylesheet" href="{% static 'feedback/style.css' %}">
+</head>
+<body>
+
+<!-- Top part of the page including the logo and the progress bar -->
+  <div class="container">
+    <div class="header">
+      <img src={% static 'feedback/logo.png' %} alt="Sky Logo" class="logo" height="100">
+      <div class="progress">
+  <span id="progressText">1 of 10</span>
+  <div class="progress">
+    <div class="progressTrack">
+      <div class="progressBar" id="progressBar"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  <!-- Adding the health card with the questions -->
+    <div class="cardContainer">
+    <div class="card">
+      <div class="cardFront">
+      <h2 id="cardtitle">Learning</h2>
+      <p id="cardQstn">How confident are you that we can release updates smoothly and without major issues?</p>
+
+    <!-- Adding the shapes to the card -->
+      <div class="shapes">
+        <div class="shape circle" data-value="green"></div>
+        <div class="shape triangle" data-value="yellow"></div>
+        <div class="shape square" data-value="red"></div>
+      </div>
+      </div>
+      
+  <!-- Adding a section to the back of the card to leave comments --> 
+      <div class="cardBack">
+        <h3>Leave a comment</h3>
+        <textarea id="commentbox" cols="70" rows="100" placeholder="Type your feedback here...."></textarea>
+        <button class="submitbtn" onclick="submitComment()"> Submit </button>
+      </div>
+    </div>
+  </div>
+        <!-- Adding buttons for navigations -->
+    <div class="buttons">
+      <button class="navbtn" onclick="goBack()">BACK</button>
+      <button class="homebtn" onclick="goHome()">Exit to Homepage</button>
+      <button class="navbtn" onclick="goNext()">NEXT</button>
+    </div>
+  </div>
+          <!-- Connecting the java files for functionality -->
+  <script src="{% static 'feedback/script.js' %}"></script>
