@@ -1,1 +1,46 @@
+<!-- 
+STUDENT ID: W1992959 
+NAME: HADIA JAVED 
+-->
 
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sky Healthchecker - User Home-Page</title>
+    <!-- linking the CSS file for user home page -->
+    <link rel="stylesheet" href="{% static 'accounts/user_home.css' %}">
+</head>
+
+<body class="user-home-body">
+    <div class="user-home-container">
+        <div class="user-home-section">
+
+            <!-- logo at the top of the page -->
+            <img src="{% static 'accounts/images/logo.png' %}" alt="Sky Healthchecker Logo" class="user-home-logo">
+
+            <!-- profile image under the logo -->
+            <img src="{% static 'accounts/images/profile.png' %}" alt="Profile" class="user-home-profile-image">
+
+            <!-- welcome heading -->
+            <h2 class="user-home-heading">Welcome</h2>
+
+            <!-- button to go to voting page -->
+            <button class="user-home-btn" id="votingPageBtn">Voting Page</button>
+
+            <!-- button to view previous votes -->
+            <button class="user-home-btn secondary" id="previousVotesBtn">View Previous Votes</button>
+
+        </div>
+    </div>
+
+    <!-- decorative border image -->
+    <img src="{% static 'accounts/images/border.png' %}" alt="Sky Healthchecker Border" class="user-home-border">
+
+    <!-- linking the JavaScript file for user home page logic -->
+    <script src="{% static 'accounts/user_home.js' %}"></script>
+</body>
+
+</html>
