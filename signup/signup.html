@@ -1,57 +1,75 @@
+<!-- 
+STUDENT ID: W1992959 
+NAME: HADIA JAVED 
+-->
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Sky Healthchecker - Sign-up</title>
-  <link rel="stylesheet" href="css/signup.css">
+    <meta charset="UTF-8">
+    <title>Sky Healthchecker - Sign-up</title>
+    <!-- linking the CSS file for signup page -->
+    <link rel="stylesheet" href="{% static 'accounts/signup.css' %}">
 </head>
 
 <body>
-  <div class="signup-container">
-    <div class="sign-up">
-      <img src="images/logo.png" alt="Sky Healthchecker Logo" class="logo">
-      <h2>Create an Account</h2>
+    <div class="signup-container">
+        <div class="signup-box">
+            <!-- logo at the top of signup box -->
+            <img src="{% static 'accounts/images/logo.png' %}" alt="Sky Healthchecker Logo" class="signup-logo">
 
-      <div class="input-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Enter name">
-      </div>
+            <!-- heading for signup -->
+            <h2 class="signup-heading">Create an Account</h2>
 
-      <div class="input-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Enter email">
-      </div>
+            <!-- input field for user name -->
+            <div class="signup-input-group">
+                <label for="signup-name">Name</label>
+                <input type="text" id="signup-name" placeholder="Enter name">
+            </div>
 
-      <div class="input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter password">
-      </div>
+            <!-- input field for email -->
+            <div class="signup-input-group">
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" placeholder="Enter email">
+            </div>
 
-      <div class="input-group">
-        <label for="team">Select Team</label>
-        <select id="team">
-          <option value="">Select a team</option>
-          <option value="1">Team 1</option>
-          <option value="2">Team 2</option>
-          <option value="3">Team 3</option>
-          <option value="4">Team 4</option>
-          <option value="5">Team 5</option>
-        </select>
-      </div>
+            <!-- input field for password -->
+            <div class="signup-input-group">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" placeholder="Enter password">
+            </div>
 
-      <button class="btn">Sign up</button>
+            <!-- dropdown to select team -->
+            <div class="signup-input-group">
+                <label for="signup-team">Select Team</label>
+                <select id="signup-team">
+                    <option value="">Select a team</option>
+                    <option value="1">Team 1</option>
+                    <option value="2">Team 2</option>
+                    <option value="3">Team 3</option>
+                    <option value="4">Team 4</option>
+                    <option value="5">Team 5</option>
+                </select>
+            </div>
 
-      <p class="login-redirection">
-        Already registered?
-        <a href="login.html" class="login-link">Log in</a>
-      </p>
+            <!-- button to submit signup form -->
+            <button class="signup-btn" id="signup-btn">Sign up</button>
+
+            <!-- link to redirect to login page -->
+            <p class="signup-login-redirect">
+                Already registered?
+                <a href="{% url 'login' %}" class="signup-login-link">Log in</a>
+            </p>
+        </div>
     </div>
-  </div>
 
-  <img src="images/border.png" alt="Sky Healthchecker Border" class="border">
+    <!-- decorative border image -->
+    <img src="{% static 'accounts/images/border.png' %}" alt="Sky Healthchecker Border" class="signup-border">
 
-  <script src="js/signup.js"></script>
+    <!-- linking the JavaScript file for signup page logic -->
+    <script src="{% static 'accounts/signup.js' %}"></script>
 </body>
 
 </html>
